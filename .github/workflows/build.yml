@@ -12,7 +12,7 @@ jobs:
       - name: OW Repo clone
         uses: actions/checkout@v1
       - name: Bootstrap
-        run: sudo apt-get install dosbox && OWDOSBOX=dosbox ./build.sh rel && find rel/binl64 -size +1M | xargs strip -g
+        run: sudo apt-get install dosbox && OWDOSBOX=dosbox ./build.sh rel
       - name: Make executable (binl)
         run: while read e; do echo rel/binl/$e; done < exelist | xargs chmod a+x
       - name: Make executable (binl64)
